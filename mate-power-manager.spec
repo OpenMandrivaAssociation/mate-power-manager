@@ -1,14 +1,12 @@
 Summary:	MATE Power Manager
 Name:		mate-power-manager
-Version:	1.2.1
+Version:	1.4.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://mate-desktop.org
-Source0:	http://pub.mate-desktop.org/releases/1.2/%{name}-%{version}.tar.xz
+Source0:	http://pub.mate-desktop.org/releases/%{lua: print (string.match(rpm.expand("%{version}"),"%d+.%d+"))}/%{name}-%{version}.tar.xz
 
-#BuildRequires:	docbook-dtd41-sgml
-#BuildRequires:	docbook-utils
 BuildRequires:	intltool
 BuildRequires:	mate-common
 BuildRequires:	mate-conf
@@ -72,7 +70,12 @@ export MATEGCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 %{_datadir}/polkit-1/actions/org.mate.power.policy
 %{_datadir}/mate-power-manager
 %{_iconsdir}/hicolor/*/apps/mate-*
-# mate help files
-%{_datadir}/mate/help
 
+
+
+
+%changelog
+* Mon Jun 04 2012 Matthew Dawkins <mattydaw@mandriva.org> 1.2.1-1
++ Revision: 802453
+- imported package mate-power-manager
 
