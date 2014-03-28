@@ -9,7 +9,6 @@ Group:		Graphical desktop/GNOME
 Url:		http://mate-desktop.org
 Source0:	http://pub.mate-desktop.org/releases/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	intltool
-BuildRequires:	itstool
 BuildRequires:	mate-common
 BuildRequires:	yelp-tools
 BuildRequires:	pkgconfig(cairo)
@@ -21,7 +20,7 @@ BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libwnck-1.0)
 BuildRequires:	pkgconfig(unique-1.0)
 BuildRequires:	pkgconfig(upower-glib)
-Requires:	mate-mime-data
+Requires:	gnome-mime-data
 Requires:	mate-icon-theme
 Requires:	upower
 
