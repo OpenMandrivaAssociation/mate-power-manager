@@ -2,8 +2,8 @@
 
 Summary:	MATE Power Manager
 Name:		mate-power-manager
-Version:	1.8.1
-Release:	2
+Version:	1.14.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://mate-desktop.org
@@ -13,12 +13,12 @@ BuildRequires:	mate-common
 BuildRequires:	yelp-tools
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(gnome-keyring-1)
-BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	pkgconfig(libcanberra-gtk)
+BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(libcanberra-gtk3)
 BuildRequires:	pkgconfig(libmatepanelapplet-4.0)
 BuildRequires:	pkgconfig(libnotify)
-BuildRequires:	pkgconfig(libwnck-1.0)
-BuildRequires:	pkgconfig(unique-1.0)
+BuildRequires:	pkgconfig(libwnck-3.0)
+BuildRequires:	pkgconfig(unique-3.0)
 BuildRequires:	pkgconfig(upower-glib)
 Requires:	gnome-mime-data
 Requires:	mate-icon-theme
@@ -36,7 +36,8 @@ NOCONFIGURE=yes ./autogen.sh
 
 %build
 %configure \
-	--enable-applets
+	--enable-applets \
+	--with-gtk=3.0
 
 %make
 
@@ -58,12 +59,15 @@ rm -fr %{buildroot}%{_datadir}/MateConf
 %{_libexecdir}/mate-inhibit-applet
 %{_datadir}/applications/mate-power-preferences.desktop
 %{_datadir}/applications/mate-power-statistics.desktop
-%{_datadir}/dbus-1/services/mate-power-manager.service
 %{_datadir}/dbus-1/services/org.mate.panel.applet.BrightnessAppletFactory.service
 %{_datadir}/dbus-1/services/org.mate.panel.applet.InhibitAppletFactory.service
+%{_datadir}/dbus-1/services/org.mate.PowerManager.service
+%{_mandir}/man1/mate-power-backlight-helper.1.xz
+%{_mandir}/man1/mate-power-manager-bugreport.1.xz
+%{_mandir}/man1/mate-power-manager.1.xz
+%{_mandir}/man1/mate-power-preferences.1.xz
+%{_mandir}/man1/mate-power-statistics.1.xz
 %{_datadir}/glib-2.0/schemas/org.mate.power-manager.gschema.xml
-%{_datadir}/mate-2.0/ui/brightness-applet-menu.xml
-%{_datadir}/mate-2.0/ui/inhibit-applet-menu.xml
 %{_datadir}/mate-panel/applets/org.mate.BrightnessApplet.mate-panel-applet
 %{_datadir}/mate-panel/applets/org.mate.InhibitApplet.mate-panel-applet
 %{_datadir}/mate-power-manager
