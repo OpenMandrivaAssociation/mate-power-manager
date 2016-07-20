@@ -8,9 +8,11 @@ License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://mate-desktop.org
 Source0:	http://pub.mate-desktop.org/releases/%{url_ver}/%{name}-%{version}.tar.xz
+BuildRequires:	docbook-utils
 BuildRequires:	intltool
 BuildRequires:	mate-common
 BuildRequires:	yelp-tools
+BuildRequires:	xmlto
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
