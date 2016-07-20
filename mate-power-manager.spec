@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(libcanberra-gtk3)
 BuildRequires:	pkgconfig(libmatepanelapplet-4.0)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libwnck-3.0)
+BuildRequires:	pkgconfig(mate-desktop-2.0)
 BuildRequires:	pkgconfig(unique-3.0)
 BuildRequires:	pkgconfig(upower-glib)
 Requires:	gnome-mime-data
