@@ -2,12 +2,12 @@
 
 Summary:	MATE Power Manager
 Name:		mate-power-manager
-Version:	1.14.0
+Version:	1.18.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-Url:		http://mate-desktop.org
-Source0:	http://pub.mate-desktop.org/releases/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://mate-desktop.org
+Source0:	https://pub.mate-desktop.org/releases/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	docbook-utils
 BuildRequires:	intltool
 BuildRequires:	mate-common
@@ -35,22 +35,19 @@ change preferences.
 
 %prep
 %setup -q
-NOCONFIGURE=yes ./autogen.sh
 
 %build
+#NOCONFIGURE=yes ./autogen.sh
 %configure \
 	--enable-applets \
-	--with-gtk=3.0
-
+	%{nil}
 %make
 
 %install
 export MATEGCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 %makeinstall_std
 
-# remove unneeded converter
-rm -fr %{buildroot}%{_datadir}/MateConf
-
+#locales
 %find_lang %{name} --with-gnome --all-name
  
 %files -f %{name}.lang
@@ -66,7 +63,6 @@ rm -fr %{buildroot}%{_datadir}/MateConf
 %{_datadir}/dbus-1/services/org.mate.panel.applet.InhibitAppletFactory.service
 %{_datadir}/dbus-1/services/org.mate.PowerManager.service
 %{_mandir}/man1/mate-power-backlight-helper.1.xz
-%{_mandir}/man1/mate-power-manager-bugreport.1.xz
 %{_mandir}/man1/mate-power-manager.1.xz
 %{_mandir}/man1/mate-power-preferences.1.xz
 %{_mandir}/man1/mate-power-statistics.1.xz
