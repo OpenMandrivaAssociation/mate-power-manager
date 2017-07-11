@@ -8,13 +8,15 @@ License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://mate-desktop.org
 Source0:	https://pub.mate-desktop.org/releases/%{url_ver}/%{name}-%{version}.tar.xz
+
 BuildRequires:	docbook-utils
 BuildRequires:	intltool
 BuildRequires:	mate-common
-BuildRequires:	yelp-tools
-BuildRequires:	xmlto
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(gnome-keyring-1)
+BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcanberra-gtk3)
 BuildRequires:	pkgconfig(libmatepanelapplet-4.0)
@@ -23,33 +25,29 @@ BuildRequires:	pkgconfig(libwnck-3.0)
 BuildRequires:	pkgconfig(mate-desktop-2.0)
 BuildRequires:	pkgconfig(unique-3.0)
 BuildRequires:	pkgconfig(upower-glib)
-Requires:	gnome-mime-data
+BuildRequires:	yelp-tools
+
 Requires:	mate-icon-theme
 Requires:	upower
 
 %description
-MATE Power Manager uses the information and facilities provided by Upower
-displaying icons and handling user callbacks in an interactive MATE session. 
-MATE Power Preferences allows authorised users to set policy and 
-change preferences.
+The MATE Desktop Environment is the continuation of GNOME 2. It provides an
+intuitive and attractive desktop environment using traditional metaphors for
+Linux and other Unix-like operating systems.
 
-%prep
-%setup -q
+MATE is under active development to add support for new technologies while
+preserving a traditional desktop experience.
 
-%build
-#NOCONFIGURE=yes ./autogen.sh
-%configure \
-	--enable-applets \
-	%{nil}
-%make
+The MATE Power Manager is a MATE session daemon that acts as a policy agent on
+top of UPower. It listens to system events and responds with user-configurable
+actions.
 
-%install
-export MATEGCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
-%makeinstall_std
+MATE Power Manager comes in three main parts:
 
-#locales
-%find_lang %{name} --with-gnome --all-name
- 
+  * mate-power-manager:      the manager daemon itself
+  * mate-power-preferences:  the control panel program, for configuration
+  * mate-power-statistics:   the statistics graphing program
+
 %files -f %{name}.lang
 %doc AUTHORS COPYING NEWS README 
 %{_sysconfdir}/xdg/autostart/mate-power-manager.desktop
@@ -73,3 +71,22 @@ export MATEGCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 %{_datadir}/polkit-1/actions/org.mate.power.policy
 %{_iconsdir}/hicolor/*/apps/mate-*
 
+#---------------------------------------------------------------------------
+
+%prep
+%setup -q
+
+%build
+#NOCONFIGURE=yes ./autogen.sh
+%configure \
+	--enable-applets \
+	%{nil}
+%make
+
+%install
+export MATEGCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+%makeinstall_std
+
+#locales
+%find_lang %{name} --with-gnome --all-name
+ 
