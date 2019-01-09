@@ -2,7 +2,7 @@
 
 Summary:	MATE Power Manager
 Name:		mate-power-manager
-Version:	1.20.0
+Version:	1.20.3
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
@@ -49,7 +49,7 @@ MATE Power Manager comes in three main parts:
   * mate-power-statistics:   the statistics graphing program
 
 %files -f %{name}.lang
-%doc AUTHORS COPYING NEWS README 
+%doc AUTHORS COPYING NEWS README
 %{_sysconfdir}/xdg/autostart/mate-power-manager.desktop
 %{_bindir}/*
 %{_sbindir}/mate-power-backlight-helper
@@ -81,12 +81,11 @@ MATE Power Manager comes in three main parts:
 %configure \
 	--enable-applets \
 	%{nil}
-%make
+%make_build
 
 %install
 export MATEGCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
-%makeinstall_std
+%make_install
 
 #locales
 %find_lang %{name} --with-gnome --all-name
- 
