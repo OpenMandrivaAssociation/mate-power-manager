@@ -13,6 +13,7 @@ BuildRequires:	docbook-utils
 BuildRequires:	intltool
 BuildRequires:	mate-common
 BuildRequires:	pkgconfig(cairo)
+BuildRequires:  pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
