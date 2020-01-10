@@ -61,10 +61,10 @@ MATE Power Manager comes in three main parts:
 %{_datadir}/dbus-1/services/org.mate.panel.applet.BrightnessAppletFactory.service
 %{_datadir}/dbus-1/services/org.mate.panel.applet.InhibitAppletFactory.service
 %{_datadir}/dbus-1/services/org.mate.PowerManager.service
-%{_mandir}/man1/mate-power-backlight-helper.1.xz
-%{_mandir}/man1/mate-power-manager.1.xz
-%{_mandir}/man1/mate-power-preferences.1.xz
-%{_mandir}/man1/mate-power-statistics.1.xz
+%{_mandir}/man1/mate-power-backlight-helper.1.*
+%{_mandir}/man1/mate-power-manager.1.*
+%{_mandir}/man1/mate-power-preferences.1.*
+%{_mandir}/man1/mate-power-statistics.1.*
 %{_datadir}/glib-2.0/schemas/org.mate.power-manager.gschema.xml
 %{_datadir}/mate-panel/applets/org.mate.BrightnessApplet.mate-panel-applet
 %{_datadir}/mate-panel/applets/org.mate.InhibitApplet.mate-panel-applet
