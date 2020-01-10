@@ -1,8 +1,2 @@
-removed_sources:
-  mate-power-manager-1.14.0.tar.xz: 286ac97658d18ea1fffa6e0a692a877727a44e41
-  mate-power-manager-1.18.0.tar.xz: 1eafa1c74e15f9347b2d9d354de8e14a35c1edcd
-  mate-power-manager-1.18.1.tar.xz: e7a6f9a71fa459bba56018fba6081903cd6210b4
-  mate-power-manager-1.20.0.tar.xz: 6fd372f376eebe3631d57a8b2baf4dd22d8dab49
-  mate-power-manager-1.20.3.tar.xz: b7a5572e4e760644ae2193b0c6cdc3dd602c0e71
 sources:
-  mate-power-manager-1.22.1.tar.xz: 018e7be851743f52b3a2b303cabab848414b563a
+  mate-power-manager-1.22.2.tar.xz: 4624a4cdead9f8e8554be65c0f27d1b05453eafc
