@@ -28,6 +28,7 @@ BuildRequires:	pkgconfig(mate-desktop-2.0)
 BuildRequires:	pkgconfig(unique-3.0)
 BuildRequires:	pkgconfig(upower-glib)
 BuildRequires:	yelp-tools
+BuildRequires:  polkit-1-devel
 
 Requires:	mate-icon-theme
 Requires:	upower
