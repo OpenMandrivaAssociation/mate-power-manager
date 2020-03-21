@@ -2,7 +2,7 @@
 
 Summary:	MATE Power Manager
 Name:		mate-power-manager
-Version:	1.24.0
+Version:	1.24.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
