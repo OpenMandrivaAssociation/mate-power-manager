@@ -56,7 +56,6 @@ MATE Power Manager comes in three main parts:
 %doc AUTHORS COPYING NEWS README
 %{_sysconfdir}/xdg/autostart/mate-power-manager.desktop
 %{_bindir}/*
-%{_sbindir}/mate-power-backlight-helper
 %{_libexecdir}/mate-brightness-applet
 %{_libexecdir}/mate-inhibit-applet
 %{_datadir}/applications/mate-power-preferences.desktop
@@ -64,10 +63,10 @@ MATE Power Manager comes in three main parts:
 %{_datadir}/dbus-1/services/org.mate.panel.applet.BrightnessAppletFactory.service
 %{_datadir}/dbus-1/services/org.mate.panel.applet.InhibitAppletFactory.service
 %{_datadir}/dbus-1/services/org.mate.PowerManager.service
-%{_mandir}/man1/mate-power-backlight-helper.1.*
-%{_mandir}/man1/mate-power-manager.1.*
-%{_mandir}/man1/mate-power-preferences.1.*
-%{_mandir}/man1/mate-power-statistics.1.*
+%doc %{_mandir}/man1/mate-power-backlight-helper.1.*
+%doc %{_mandir}/man1/mate-power-manager.1.*
+%doc %{_mandir}/man1/mate-power-preferences.1.*
+%doc %{_mandir}/man1/mate-power-statistics.1.*
 %{_datadir}/glib-2.0/schemas/org.mate.power-manager.gschema.xml
 %{_datadir}/mate-panel/applets/org.mate.BrightnessApplet.mate-panel-applet
 %{_datadir}/mate-panel/applets/org.mate.InhibitApplet.mate-panel-applet
@@ -78,7 +77,7 @@ MATE Power Manager comes in three main parts:
 #---------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 #NOCONFIGURE=yes ./autogen.sh
