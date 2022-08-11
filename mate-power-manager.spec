@@ -3,18 +3,20 @@
 Summary:	MATE Power Manager
 Name:		mate-power-manager
 Version:	1.26.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		https://mate-desktop.org
 Source0:	https://pub.mate-desktop.org/releases/%{url_ver}/%{name}-%{version}.tar.xz
+Patch1:		mate-power-manager_0001-gpm-statistics-fix-memory-leak.patch
+Patch2:		mate-power-manager_0002-gpm-prefs-fix-memory-leak.patch
 
 BuildRequires:	autoconf-archive
 BuildRequires:	docbook-utils
 BuildRequires:	intltool
 BuildRequires:	mate-common
 BuildRequires:	pkgconfig(cairo)
-BuildRequires:  pkgconfig(dbus-glib-1)
+BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
@@ -29,7 +31,7 @@ BuildRequires:	pkgconfig(mate-desktop-2.0)
 BuildRequires:	pkgconfig(unique-3.0)
 BuildRequires:	pkgconfig(upower-glib)
 BuildRequires:	yelp-tools
-BuildRequires:  polkit-1-devel
+BuildRequires:	pkgconfig(polkit-agent-1)
 
 Requires:	mate-icon-theme
 Requires:	upower
@@ -82,8 +84,8 @@ MATE Power Manager comes in three main parts:
 %build
 #NOCONFIGURE=yes ./autogen.sh
 %configure \
-	--enable-applets \
-	%{nil}
+	--enable-applets
+
 %make_build
 
 %install
