@@ -84,6 +84,8 @@ MATE Power Manager comes in three main parts:
 %autosetup -p1
 
 %build
+export AR=ar
+export RANLIB=ranlib
 #NOCONFIGURE=yes ./autogen.sh
 %configure \
 	--enable-applets
